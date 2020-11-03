@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "workspaces": [
+    "server",
+    "frontend"
+  ],
+  "scripts": {
+    "test": "lerna run test",
+    "start": "lerna run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leq382121/ingenous_octopus.git"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "name": "wrapper_for_project"
+}

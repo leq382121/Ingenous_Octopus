@@ -1,0 +1,13 @@
+{
+  "name": "octopus_entrance",
+  "version": "0.0.1",
+  "description": "Minimal API Server",
+  "scripts": {
+    "start": "json-server --port 3011 --watch data.json"
+  },
+  "author": "Liutauras",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "0.16.2"
+  }
+}
