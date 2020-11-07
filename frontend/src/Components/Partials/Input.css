@@ -1,0 +1,42 @@
+.Input {
+  label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    margin-bottom: 0.1875rem;
+  }
+
+  input {
+    border-radius: 3px;
+    border: 1px solid var(--color-grey-4);
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &:hover {
+      border-color: var(--color-grey-2);
+    }
+
+    &:focus {
+      border-color: var(--color-green-5);
+    }
+
+    &:disabled {
+      background-color: var(--color-grey-7);
+    }
+  }
+
+  &.disabled {
+    label {
+      color: var(--color-grey-2);
+    }
+  }
+
+  &_error {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    color: var(--color-red);
+  }
+}

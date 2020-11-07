@@ -1,0 +1,26 @@
+.Button {
+  button {
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 100%;
+
+    &.primary {
+      background-color: var(--color-green-3);
+
+      &:hover {
+        background-color: var(--color-green-4);
+      }
+    }
+
+    &.secondary {
+      background-color: var(--color-grey-8);
+      border: 1px solid var(--color-grey-5);
+      color: var(--color-green-4);
+
+      &:hover {
+        background-color: var(--color-grey-6);
+      }
+    }
+  }
+}
