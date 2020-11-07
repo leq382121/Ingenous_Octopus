@@ -26,9 +26,14 @@ html {
   --color-red-1: #D11C32;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -38,6 +43,7 @@ h1 {
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0em;
+  margin: 0;
 }
 
 h2 {
@@ -45,6 +51,15 @@ h2 {
   font-weight: 500;
   line-height: 22px;
   letter-spacing: 0em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+form {
+  width: 100%;
 }
 
 /* Additional Globals */

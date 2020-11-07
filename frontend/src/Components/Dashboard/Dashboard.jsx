@@ -71,6 +71,7 @@ export const Dashboard = (props) => {
 
   return (
     <div className="Dashboard">
+      AS DASHBOARD!!
       {/* <div className="Dashboard__sidebar">{listFields()}</div>
 
       <Route

@@ -1,12 +1,20 @@
 .Button {
+  width: 100%;
+
   button {
     border-radius: 4px;
     font-size: 0.875rem;
     font-weight: 500;
     width: 100%;
+    display: block;
+    outline: none;
+    height: 2.5rem;
+    cursor: pointer;
 
     &.primary {
       background-color: var(--color-green-3);
+      color: var(--color-white);
+      border: 0;
 
       &:hover {
         background-color: var(--color-green-4);

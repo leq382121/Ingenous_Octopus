@@ -2,10 +2,10 @@ import React from "react";
 
 import "./Button.css";
 
-export const Button = ({buttonText, onClickHandler, primary}) => {
+export const Button = ({buttonType, buttonText, onClickHandler, primary}) => {
   return (
     <div className="Button">
-      <button type="button" onClick={() => onClickHandler()} className={primary ? 'primary' : 'secondary'}>
+      <button type={buttonType ? buttonType : "button"} onClick={(e) => onClickHandler && onClickHandler(e)} className={primary ? 'primary' : 'secondary'}>
         {buttonText}
       </button>
     </div>

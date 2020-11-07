@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import "./Button.css";
+import "./Input.css";
 
 export const Input = ({
   labelText,
@@ -8,12 +8,17 @@ export const Input = ({
   disabled,
   error,
   selectValues,
+  inputValueHandler
 }) => {
   const [inputValue, setInputValue] = useState("");
 
+  useEffect(() => {
+    inputValueHandler && inputValueHandler(inputValue);
+  }, [inputValue])
+
   return (
-    <div className={("Input", disabled && "disabled")}>
-      <label for={labelText}>{labelText}</label>
+    <div className={("Input" + (disabled ? " disabled" : "") + (error ? " inputError" : "") )}>
+      <label htmlFor={labelText}>{labelText}</label>
 
       {inputType === "select" ? (
         <select
@@ -23,7 +28,7 @@ export const Input = ({
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         >
-          {selectValues.map((item, i) => {
+          {selectValues && selectValues.map((item, i) => {
             return (
               <option name={item.name} value={item.value} key={i}>
                 {item.name}
@@ -42,7 +47,7 @@ export const Input = ({
         ></input>
       )}
 
-      {error && <p className={'Input_error', 'error'}>{error}</p>}
+      {error && <p className={'Input_error' + ' error'}>{error}</p>}
     </div>
   );
 };
