@@ -15,7 +15,15 @@
 
   &_content {
     display: flex;
+    align-items: center;
     flex-direction: column;
     overflow-y: auto;
+    width: 100%;
+
+    padding: 2rem 1rem;
+
+    @media (min-width: 1024px) {
+      padding: 4rem 2rem;
+    }
   }
 }

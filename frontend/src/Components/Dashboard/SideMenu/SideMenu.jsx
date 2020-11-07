@@ -22,8 +22,8 @@ export const SideMenu = ({sideMenuActive, setSideMenuActive}) => {
                   id={item.id} 
                   title={item.title}
                   notifications={item.notifications}
-                  index={i}
                   setSideMenuActive={setSideMenuActive}
+                  key={i}
                 />
               );
             })}

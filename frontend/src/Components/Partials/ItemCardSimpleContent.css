@@ -1,0 +1,40 @@
+.ItemCardSimpleContent {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    @media (min-width: 1024px) {
+      flex-wrap: nowrap;
+      width: 100%;
+    }
+
+    .simple-item {
+      width: 50%;
+      padding-right: 1rem;
+      margin-bottom: 1.25rem;
+
+      @media (min-width: 1024px) {
+        width: 100%;
+        margin: 0;
+      }
+
+      .title {
+        font-size: 0.75rem;
+        font-weight: 400;
+        margin-bottom: 0.25rem;
+        color: var(--color-grey-3);
+      }
+
+      .value {
+        font-weight: 500;
+        padding-right: 1rem;
+        font-size: 0.875rem;
+
+        @media (min-width: 1024px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

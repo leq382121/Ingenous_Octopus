@@ -1,5 +1,5 @@
 import React from "react";
-// import { EmptyWidget } from './EmptyWidget';
+import { Main } from './Main/Main';
 // import { Salesreport } from './salesreport/Salesreport';
 // import { Documentation } from './Documentation/Documentation';
 // import { Tresholds } from './tresholds/Tresholds';
@@ -11,9 +11,11 @@ export const DashboardRouter = (props) => {
   const getContentForDashboard = () => {
     switch (props.match.params.sectionType) {
       case "main": {
-        return <h1>Su jumis sveikinasi Main! :)</h1>;
+        return <Main 
+          title='Summary'
+        />;
       }
-      case "documentation": {
+      case "plantselectrical": {
         return <h1>Su jumis sveikinasi kazkas kita! :)</h1>;
       }
       // case "apilog": {
@@ -31,10 +33,10 @@ export const DashboardRouter = (props) => {
       // }
 
       default: {
-        return <h2> Page is still under construction.</h2>;
+        return <h1 className='widget max-width-wrapper'> Only Lemons here. Make a lemonade! 🍋</h1>;
       }
     }
   };
 
-  return <div className="Dashboard__content">{getContentForDashboard()}</div>;
+  return getContentForDashboard();
 };

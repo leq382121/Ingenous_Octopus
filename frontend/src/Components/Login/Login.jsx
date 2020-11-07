@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-// import { Route, Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import { Input } from '../Partials/Input'
 import { Button } from '../Partials/Button'
 

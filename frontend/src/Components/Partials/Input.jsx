@@ -47,7 +47,7 @@ export const Input = ({
         ></input>
       )}
 
-      {error && <p className={'Input_error' + ' error'}>{error}</p>}
+      {error && <p className='Input_error error'>{error}</p>}
     </div>
   );
 };
