@@ -24,6 +24,12 @@ html {
   --color-blue-1: #1C5C7B;
 
   --color-red-1: #D11C32;
+
+  --color-black-transparent: rgba(0, 0, 0, 0.8);
+
+  /* Sizes */
+
+  --size-main-nav: 17.5rem;
 }
 
 * {
@@ -54,9 +60,21 @@ h2 {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 p {
   margin: 0;
 }
+
 
 form {
   width: 100%;
@@ -65,4 +83,18 @@ form {
 /* Additional Globals */
 .error {
   color: var(--color-red-1);
+}
+
+.max-width-wrapper {
+  max-width: 840px;
+  padding: 0 1.25rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
 }

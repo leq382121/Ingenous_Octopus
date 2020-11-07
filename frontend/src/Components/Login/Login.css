@@ -5,7 +5,7 @@
   justify-content: center;
   min-height: 100vh;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     background-color: var(--color-grey-1);
   }
 
@@ -18,7 +18,7 @@
     align-items: center;
     flex-direction: column;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       width: 22.75rem;
     }
 
@@ -45,7 +45,7 @@
   .Register_text {
     color: (--color-black);
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       color: (--color-white);
     }
   }

@@ -6,7 +6,7 @@ import { Button } from '../Partials/Button'
 import "./Login.css";
 import logo from "../../images/logo.svg";
 
-export const Login = () => {
+export const Login = ({initiateLogIn}) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
 
@@ -20,7 +20,7 @@ export const Login = () => {
     setErrorPass('');
 
     (email === "TEST" && pass === "TEST") 
-      ? console.log("valio, perkeliam i Main")
+      ? initiateLogIn()
       : email === "TEST" 
         ? setErrorPass("Password incorrect")
         : setErrorEmail('Email not found') 

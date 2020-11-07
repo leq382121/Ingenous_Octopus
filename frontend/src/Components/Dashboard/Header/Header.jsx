@@ -1,35 +1,52 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import Login from "./Login";
 
-import "./header.css";
-import mainLogo from './../../images/main_logo.svg';
-import { USER_MENU_ITEMS } from './../../constants';
-import { GET_USER_NAME } from './../../helpers';
+import burger from "../../../images/burger.svg";
+import home from "../../../images/home.svg";
 
-export const Header = (props) => {
+import "./Header.css";
+// import mainLogo from './../../images/main_logo.svg';
+// import { USER_MENU_ITEMS } from './../../constants';
+// import { GET_USER_NAME } from './../../helpers';
+
+export const Header = ({
+  initiateLogOut,
+  setSideMenuActive,
+  sideMenuActive,
+}) => {
   const history = useHistory();
-  const [showMenu, setShowMenu] = useState(false);
-
-  const handleLogout = () => {
-    if (props.userLoggedIn) {
-      return props.initiateLogOut(), setShowMenu(false), history.push("/login");
-    }
-  };
-
-  // const catcheHeaderOutsideClick = () => {
-  //   document.querySelector("body").addEventListener("click", function (event) {
-  //     if (!event.target.classList.contains("Header__content__user-menu")) {
-  //       setShowMenu(false);
-  //     }
-  //   });
-  // };
-
-  // catcheHeaderOutsideClick();
+  const handleLogout = () => (initiateLogOut(), history.push("/login"));
 
   return (
     <div className="Header">
+      <div className="Header_nav">
+        <div
+          className="Header_nav_toggle"
+          onClick={() => setSideMenuActive(!sideMenuActive)}
+        >
+          <img className="burger" src={burger} />
+        </div>
 
+        <Link to={"/dashboard/main"} className="Header_nav_home flex-center">
+          <img className="home" src={home} />
+          <p>Back to projects</p>
+        </Link>
+      </div>
+
+      <div className="Header_title">Kaunas park</div>
+
+      <div className="Header_user">
+        <p>Tester Testman</p>
+
+        <button
+          className="Header_user-circle"
+          onClick={() => {
+            return handleLogout();
+          }}
+        >
+          A
+        </button>
+      </div>
     </div>
   );
 };
