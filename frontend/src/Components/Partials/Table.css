@@ -13,14 +13,39 @@
       font-weight: 400;
       text-align: left;
       color: var(--color-grey-3);
+      padding: 0 0 0.25rem;
     }
 
     tr {
       td {
         min-width: 9.625rem;
+        padding: 0.75rem 0;
+        font-weight: 500;
+        line-height: 1.25rem;
+        font-size: 0.875rem;
+
+        @media (min-width: 1024px) {
+          font-size: initial
+        }
 
         a {
           text-decoration: underline;
+        }
+
+        .yield {
+          font-weight: 700;
+        }
+
+        .table-data {
+          display: flex;
+        }
+
+        /* .no - all the # numbers in every table */
+        .no {
+          &::before {
+            content: "#";
+            display: block;
+          }
         }
       }
     }

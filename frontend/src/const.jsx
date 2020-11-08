@@ -89,7 +89,7 @@ const CONTENT_CALCULATIONS = {
   category: "Calculations",
   title: "Recently calculated",
   link: "/dashboard/calculations",
-  button_text: "Go to Plants & electrical",
+  button_text: "Go to Calculated",
   table_col: [
     {
       title: "No.",
@@ -113,58 +113,67 @@ const CONTENT_CALCULATIONS = {
     },
   ],
   items: [
-    [
-      {
-        value: "22",
-        id: "no",
+    {
+      no: 22,
+      date: '2020-09-17',
+      type: 'Preliminary',
+      yield: {
+        value: 1000,
+        unit: 'KWh'
       },
-      {
-        value: "2020-09-17",
-        id: "date",
+      configuration: {
+        value: "View",
+        link: "test"
       },
-      {
-        value: "Preliminary",
-        id: "type",
+    },
+    {
+      no: 21,
+      date: '2020-09-08',
+      type: 'Detailed',
+      yield: {
+        value: 1020,
+        unit: 'KWh'
       },
-      {
-        value: "Configuration",
-        link: "#",
-        id: "configuration",
+      configuration: {
+        value: "View",
+        link: "#"
       },
-      {
-        value: "1000 kWh",
-        id: "yield",
+    },
+    {
+      no: 20,
+      date: '2020-09-05',
+      type: 'Detailed',
+      yield: {
+        value: 1320,
+        unit: 'KWh'
       },
-    ],
-    [
-      {
-        value: "21",
-        id: "no",
+      configuration: {
+        value: "View",
+        link: "#"
       },
-      {
-        value: "2020-09-08",
-        id: "date",
-      },
-      {
-        value: "Detailed",
-        id: "type",
-      },
-      {
-        value: "Configuration",
-        link: "#",
-        id: "configuration",
-      },
-      {
-        value: "1020 kWh",
-        id: "yield",
-      },
-    ],
+    },
   ],
 };
+
+const CONTENT_CALCULATE_CARD = {
+  subtitle: "Select and calculate",
+  title: "Starting 4 new calculations",
+  items: [
+    {
+      title: "Plant versions",
+      value: 3,
+    },
+    {
+      title: "Module versions",
+      value: 2,
+    }
+  ],
+}
 
 export {
   DASHBOARD_MENU,
   CONTENT_PROJECT_PARAMETERS,
   CONTENT_SIMULATION,
   CONTENT_CALCULATIONS,
+  CONTENT_CALCULATE_CARD,
 };

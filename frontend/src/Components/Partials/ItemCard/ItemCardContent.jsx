@@ -1,12 +1,12 @@
 import React from "react";
-import { Button } from "./Button";
-import { Table } from "./Table";
+import { Button } from "../Button";
+import { Table } from "../Table";
 
-import "./ItemCardSimpleContent.css";
+import "./ItemCardContent.css";
 
-export const ItemCardSimpleContent = ({ items, tableHeaders }) => {
+export const ItemCardContent = ({ items, tableHeaders }) => {
   return (
-    <div className="ItemCardSimpleContent">
+    <div className="ItemCardContent">
       {tableHeaders ? (
         <Table 
           columns={tableHeaders}

@@ -1,4 +1,4 @@
-.ItemCardSimpleContent {
+.ItemCardContent {
   ul {
     display: flex;
     justify-content: space-between;
@@ -44,6 +44,46 @@
           margin-left: 1rem;
           width: auto;
           padding: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+/* If card type: side */
+.side {
+  .ItemCardContent {
+    ul {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .simple-item {
+      margin-bottom: 0.25rem;
+      flex-direction: row;
+      width: 50%;
+
+      @media (min-width: 1024px) {
+        width: auto;
+      }
+
+      .title {
+        font-size: 0.625rem;
+        margin-bottom: 0;
+
+        @media (min-width: 1024px) {
+          font-size: 0.75rem;
+        }
+      }
+
+      .value {
+        color: var(--color-grey-3);
+        font-weight: 400;
+        font-size: 0.625rem;
+        padding-left: 2px;
+
+        @media (min-width: 1024px) {
+          font-size: 0.75rem;
         }
       }
     }

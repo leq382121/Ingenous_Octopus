@@ -48,17 +48,28 @@ body {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0em;
   margin: 0;
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
 }
 
 h2 {
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 22px;
+  letter-spacing: 0em;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 500;
   letter-spacing: 0em;
   margin: 0;
 }
@@ -112,8 +123,11 @@ form {
 .widget {
   width: 100%;
 
-  h1 {
-    padding-bottom: 1.5rem;
+  > h1 {
+
+    @media (min-width: 1024px) {
+      padding-bottom: 1.5rem;
+    }
   }
 }
 
