@@ -48,7 +48,7 @@
     opacity: 0.3;
   }
 
-  input {
+  input[type="checkbox"] {
     border-radius: 50%;
   }
 }
