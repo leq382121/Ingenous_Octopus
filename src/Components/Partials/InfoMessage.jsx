@@ -8,12 +8,6 @@ export const InfoMessage = ({type, message}) => {
 
   const infoIcon = () => {
     switch (type) {
-      case 'error': {
-        return <img></img>;
-      }
-      case 'waring': {
-        return <img></img>;
-      }
       case 'info': {
         return <img className='info' src={infoMessage} alt='info'/>;
       }

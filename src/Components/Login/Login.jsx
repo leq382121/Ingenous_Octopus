@@ -28,7 +28,7 @@ export const Login = ({initiateLogIn}) => {
   return (
     <div className='Login'>
       <div className='Login_modal'>
-        <img className='logo' src={logo}/>
+        <img className='logo' src={logo} alt="logo"/>
         <h1 className='title'>Log in</h1>
         <p className='subtitle'>Enter your details below</p>
         

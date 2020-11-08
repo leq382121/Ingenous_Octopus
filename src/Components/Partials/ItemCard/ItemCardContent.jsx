@@ -26,7 +26,6 @@ export const ItemCardContent = ({ items, tableHeaders }) => {
                     <Button
                       buttonType={'button'}
                       buttonText={item.button_text}
-                      onClickHandler={true}
                       action={true}
                     />
                   )}

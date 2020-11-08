@@ -9,6 +9,7 @@ export const TilesColumn = ({ columnData, handleSelectedTiles, handleModalOn }) 
 
   useEffect(() => {
     handleSelectedTiles(columnData.type, selectedColValues);
+    // eslint-disable-next-line
   }, [selectedColValues]);
 
   const handleCardSelect = (value) => {

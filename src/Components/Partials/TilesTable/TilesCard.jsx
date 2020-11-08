@@ -8,12 +8,14 @@ export const TilesCard = ({ cardData, handleCardSelect, handleCardRemove }) => {
 
   useEffect(() => {
     (!cardSelected && cardData.checked) && setCardSelected(true);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     cardSelected 
       ? handleCardSelect(cardData)
       : handleCardRemove(cardData)
+    // eslint-disable-next-line
   }, [cardSelected]);
 
   return (

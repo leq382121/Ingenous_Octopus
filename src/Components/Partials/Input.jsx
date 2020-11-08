@@ -14,6 +14,8 @@ export const Input = ({
 
   useEffect(() => {
     inputValueHandler && inputValue && inputValueHandler(inputValue);
+
+    // eslint-disable-next-line
   }, [inputValue]);
 
   return (

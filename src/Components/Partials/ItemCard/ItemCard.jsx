@@ -28,13 +28,11 @@ export const ItemCard = ({
               {/* TODO: Hardcoded buttons */}
               <Button
                 buttonText={'Cancel'}
-                onClickHandler={() => console.log('Pew.. pew..')}
               />
 
               <Button
                 buttonText={'Start calculating'}
                 primary={true}
-                onClickHandler={() => console.log('Pew.. pew..')}
               />
             </div>
           </>
@@ -50,7 +48,6 @@ export const ItemCard = ({
               {onClickHandler && (
                 <Button
                   buttonText={buttonText}
-                  onClickHandler={onClickHandler}
                 />
               )}
             </div>

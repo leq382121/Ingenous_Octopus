@@ -12,6 +12,8 @@ export const Header = ({
   sideMenuActive,
 }) => {
   const history = useHistory();
+
+  // eslint-disable-next-line
   const handleLogout = () => (initiateLogOut(), history.push('/login'))
 
   return (

@@ -24,7 +24,7 @@ import "./ModalForm.css";
 export const PlantsElectrical = ({ title }) => {
   const [showInfo, setShowInfo] = useState(true);
   const [modalType, setModalType] = useState("");
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [selectedTilesItems, setSelectedTilesItems] = useState({
     plants: [],
     modules: [],
@@ -34,13 +34,14 @@ export const PlantsElectrical = ({ title }) => {
   const [moduleType, setModuleType] = useState("");
   const [disableMonoface, setDisableMonofaces] = useState(false);
 
-  const handleModalOn = (value) => (setShowModal(true), setModalType(value));
-  const handleModalClose = () => (setShowModal(false), setModalType(""));
+  // eslint-disable-next-line
+  const handleModalOn = (value) => (setShowModal(true), setModalType(value))
+
+  // eslint-disable-next-line
+  const handleModalClose = () => (setShowModal(false), setModalType(""))
 
   // TODO: Create generator that creates entries accordingly to Columns
   useEffect(() => {
-    console.log(selectedTilesItems);
-
     selectedTilesItems.plants.length &&
     selectedTilesItems.modules.length &&
     selectedTilesItems.inverters.length
@@ -49,8 +50,6 @@ export const PlantsElectrical = ({ title }) => {
   }, [selectedTilesItems]);
 
   useEffect(() => {
-    console.log(document.querySelector("body"));
-
     showModal
       ? document.querySelector("body").classList.add("scroll-disabled")
       : document.querySelector("body").classList.remove("scroll-disabled");
@@ -60,8 +59,7 @@ export const PlantsElectrical = ({ title }) => {
     moduleType === "monofacial" && !disableMonoface
       ? setDisableMonofaces(true)
       : setDisableMonofaces(false);
-
-    console.log(disableMonoface);
+    // eslint-disable-next-line
   }, [moduleType]);
 
   const handleSelectedTiles = (type, value) => {
@@ -111,12 +109,10 @@ export const PlantsElectrical = ({ title }) => {
                 <div className="modal_form-row flex-center">
                   <Button
                     buttonText="Upload PAN file"
-                    onClickHandler={() => console.log("test")}
                   />
 
                   <Button
                     buttonText="Select from presets"
-                    onClickHandler={() => console.log("test")}
                   />
                 </div>
               </div>
@@ -184,7 +180,7 @@ export const PlantsElectrical = ({ title }) => {
               <div className="PlantsElectrical_modal_right_top">
                 <img className="info-icon" src={info} alt="info" />
 
-                <p className='info-title'>Module type</p>
+                <p className="info-title">Module type</p>
 
                 <p className="simple-desc">
                   Some description about this mysterious module type
@@ -203,10 +199,9 @@ export const PlantsElectrical = ({ title }) => {
               </div>
 
               <div className="PlantsElectrical_modal_right_bottom">
-
                 <div className="bottom_checkbox_wrapper">
-                  <input type="checkbox" id="preset" name='preset checkbox' />
-                  <label for="preset">Save as preset</label>
+                  <input type="checkbox" id="preset" name="preset checkbox" />
+                  <label htmlFor="preset">Save as preset</label>
                 </div>
 
                 <div className="bottom_button_wrapper">
@@ -215,7 +210,10 @@ export const PlantsElectrical = ({ title }) => {
                     onClickHandler={() => handleModalClose()}
                   />
 
-                  <Button buttonText="Add module" primary />
+                  <Button
+                    buttonText="Add module"
+                    primary
+                  />
                 </div>
               </div>
             </div>
