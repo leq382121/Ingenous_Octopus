@@ -1,0 +1,37 @@
+.InfoMessage {
+  align-items: center;
+  background-color: var(--color-blue-2);
+  color: var(--color-blue-1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1rem;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  animation-duration: 1s;
+  animation-name: messageAppear;
+
+  @keyframes messageAppear {
+    from {
+      opacity: 0;
+      padding: 0;
+      font-size: 0;
+    }
+
+    50% {
+      padding: 1rem;
+      font-size: 0.875rem;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  img {
+    margin-right: 0.875rem;
+  }
+}

@@ -1,0 +1,54 @@
+.TilesColumn {
+  &_column {
+    min-width: 16.25rem;
+    background-color: var(--color-grey-8);
+    border: 1px solid var(--color-grey-6);
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    padding: 0.875rem 0.5rem;
+
+    @media (min-width: 1024px) {
+      min-width: initial;
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.5rem 0.875rem;
+
+      .cards-selected {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: var(--color-grey-3);
+      }
+    }
+  }
+
+  &_new-card {
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--color-grey-2);
+    border-radius: 4px;
+    background-color: var(--color-grey-7);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &:hover {
+      background-color: var(--color-grey-6);
+    }
+
+    img {
+      margin-right: 0.5rem;
+    }
+  }
+}

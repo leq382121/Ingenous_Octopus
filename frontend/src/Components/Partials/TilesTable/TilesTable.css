@@ -1,0 +1,9 @@
+.TilesTable {
+  margin-top: 1.5rem;
+  overflow: auto;
+
+  &_wrapper {
+    display: flex;
+    overflow-x: auto;
+  }
+}

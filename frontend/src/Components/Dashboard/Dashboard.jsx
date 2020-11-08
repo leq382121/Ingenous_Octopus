@@ -19,7 +19,6 @@ export const Dashboard = (props) => {
       />
 
       <div className="Dashboard_page">
-        
         <SideMenu
           sideMenuActive={sideMenuActive}
           setSideMenuActive={(boolean) => setSideMenuActive(boolean)}
@@ -39,6 +38,8 @@ export const Dashboard = (props) => {
             }}
           />
         </div>
+
+        {/* TODO: Move modal here */}
       </div>
     </div>
   );

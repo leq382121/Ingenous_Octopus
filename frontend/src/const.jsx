@@ -160,15 +160,85 @@ const CONTENT_CALCULATE_CARD = {
   title: "Starting 4 new calculations",
   items: [
     {
-      title: "Plant versions",
-      value: 3,
+      title: "Already calculated:",
+      value: 2,
     },
     {
-      title: "Module versions",
+      title: "Incompatible configurations:",
       value: 2,
     }
   ],
 }
+
+const TILES_PAYLOAD = [
+  {
+    type: 'plants',
+    title: 'Plants',
+    content: [
+      {
+        name: 'Plant Version 1',
+        type: 'Preliminary',
+        description: 'View factors',
+        id: 1,
+      },
+      {
+        name: 'Plant Version 2',
+        type: 'Detailed',
+        description: ' Ray tracing',
+        id: 2,
+      },
+      {
+        name: 'Plant GM file',
+        type: 'Detailed',
+        description: ' Ray tracing',
+        id: 3,
+      },
+    ]
+  },
+  {
+    type: 'modules',
+    title: 'Modules',
+    content: [
+      {
+        name: 'Mitsubishi PV-MLU255HC',
+        id: 4,
+        checked: true,
+      },
+      {
+        name: 'SEP 300W',
+        id: 5,
+      },
+    ]
+  },
+  {
+    type: 'inverters',
+    title: 'Inverters',
+    content: [
+      {
+        name: 'Inverter 1',
+        id: 6,
+        info_missing: true,
+      },
+      {
+        name: 'Inverter 2',
+        id: 7,
+        info_missing: true,
+      },
+      {
+        name: 'SMA Sunny Boy 5.0',
+        id: 8,
+      },
+      {
+        name: 'GoodWe GW15KN-DT',
+        id: 9,
+      },
+      {
+        name: 'ABB UNO-DM-4.0-TL-PLUS',
+        id: 9,
+      },
+    ]
+  },
+]
 
 export {
   DASHBOARD_MENU,
@@ -176,4 +246,5 @@ export {
   CONTENT_SIMULATION,
   CONTENT_CALCULATIONS,
   CONTENT_CALCULATE_CARD,
+  TILES_PAYLOAD,
 };

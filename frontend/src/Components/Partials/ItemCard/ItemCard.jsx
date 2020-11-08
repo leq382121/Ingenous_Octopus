@@ -14,33 +14,31 @@ export const ItemCard = ({
   children,
 }) => {
   const cardType = () => {
-    console.log(type);
     switch (type) {
       case "side": {
-        return (<>
-          <div className="ItemCard_left">
-            <h3>{subtitle && subtitle}</h3>
-            <h1>{title && title}</h1>
+        return (
+          <>
+            <div className="ItemCard_left">
+              <h3>{subtitle && subtitle}</h3>
+              <h1>{title && title}</h1>
 
-            <div className="ItemCard_list-labels">
-              {children && children}
+              <div className="ItemCard_list-labels">{children && children}</div>
             </div>
-          </div>
-          <div className="ItemCard_right">
+            <div className="ItemCard_right">
+              {/* TODO: Hardcoded buttons */}
+              <Button
+                buttonText={"Cancel"}
+                onClickHandler={() => console.log("Pew.. pew..")}
+              />
 
-            {/* TODO: Hardcoded buttons */}
-            <Button
-              buttonText={'cancel'}
-              onClickHandler={() => console.log("Pew.. pew..")}
-            />
-
-            <Button
-              buttonText={'Start calculating'}
-              primary={true}
-              onClickHandler={() => console.log("Pew.. pew..")}
-            />
-          </div>
-        </>);
+              <Button
+                buttonText={"Start calculating"}
+                primary={true}
+                onClickHandler={() => console.log("Pew.. pew..")}
+              />
+            </div>
+          </>
+        );
       }
 
       default:
@@ -64,12 +62,10 @@ export const ItemCard = ({
   };
 
   return (
-    <div className={"ItemCard " + (type ? type : '')}>
+    <div className={"ItemCard " + (type ? type : "")}>
       {category && <h5>{category}</h5>}
 
-      <div className="ItemCard_block">
-        {cardType()}
-      </div>
+      <div className="ItemCard_block">{cardType()}</div>
     </div>
   );
 };
