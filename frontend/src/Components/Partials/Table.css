@@ -1,0 +1,28 @@
+.Table {
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+
+    @media (min-width: 1024px) {
+      table-layout: fixed;
+    }
+
+    th {
+      font-size: 0.875rem;
+      font-weight: 400;
+      text-align: left;
+      color: var(--color-grey-3);
+    }
+
+    tr {
+      td {
+        min-width: 9.625rem;
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

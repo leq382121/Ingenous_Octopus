@@ -31,5 +31,16 @@
         background-color: var(--color-grey-6);
       }
     }
+
+    &.action {
+      background-color: var(--color-grey-8);
+      border: 1px solid var(--color-grey-9);
+      color: var(--color-black);
+      font-size: 0.625rem;
+
+      &:hover {
+        background-color: var(--color-grey-6);
+      }
+    }
   }
 }

@@ -34,7 +34,11 @@
       width: 100%;
 
       @media (min-width: 1024px) {
-        width: 30%;
+        width: 26%;
+      }
+
+      button {
+        height: 2rem;
       }
     }
   }

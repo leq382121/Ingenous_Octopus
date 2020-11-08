@@ -65,22 +65,106 @@ const CONTENT_PROJECT_PARAMETERS = {
 const CONTENT_SIMULATION = {
   category: "Simulation parameters",
   title: "Plants & electrical",
-  link: "/dashboard/meteo",
-  link_title: "Go to Plants & electrical",
+  link: "/dashboard/plantselectrical",
+  button_text: "Go to Plants & electrical",
   items: [
     {
-      title: "Location",
-      value: "Kaunas, Lithuania",
+      title: "Plant versions",
+      value: 3,
     },
     {
-      title: "Coordinates",
-      value: "54.8985° N, 23.9036° E",
+      title: "Module versions",
+      value: 2,
+      button_text: "Quick add",
     },
     {
-      title: "Meteo data source",
-      value: "PVGIS",
+      title: "Inverter versions",
+      value: 6,
+      button_text: "Quick add",
     },
   ],
 };
 
-export { DASHBOARD_MENU, CONTENT_PROJECT_PARAMETERS, CONTENT_SIMULATION };
+const CONTENT_CALCULATIONS = {
+  category: "Calculations",
+  title: "Recently calculated",
+  link: "/dashboard/calculations",
+  button_text: "Go to Plants & electrical",
+  table_col: [
+    {
+      title: "No.",
+      id: "no",
+    },
+    {
+      title: "Date",
+      id: "date",
+    },
+    {
+      title: "Type",
+      id: "type",
+    },
+    {
+      title: "Configuration",
+      id: "configuration",
+    },
+    {
+      title: "Yield",
+      id: "yield",
+    },
+  ],
+  items: [
+    [
+      {
+        value: "22",
+        id: "no",
+      },
+      {
+        value: "2020-09-17",
+        id: "date",
+      },
+      {
+        value: "Preliminary",
+        id: "type",
+      },
+      {
+        value: "Configuration",
+        link: "#",
+        id: "configuration",
+      },
+      {
+        value: "1000 kWh",
+        id: "yield",
+      },
+    ],
+    [
+      {
+        value: "21",
+        id: "no",
+      },
+      {
+        value: "2020-09-08",
+        id: "date",
+      },
+      {
+        value: "Detailed",
+        id: "type",
+      },
+      {
+        value: "Configuration",
+        link: "#",
+        id: "configuration",
+      },
+      {
+        value: "1020 kWh",
+        id: "yield",
+      },
+    ],
+  ],
+};
+
+export {
+  DASHBOARD_MENU,
+  CONTENT_PROJECT_PARAMETERS,
+  CONTENT_SIMULATION,
+  CONTENT_CALCULATIONS,
+};

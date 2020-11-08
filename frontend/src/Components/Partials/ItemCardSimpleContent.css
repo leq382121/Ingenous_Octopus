@@ -13,6 +13,8 @@
       width: 50%;
       padding-right: 1rem;
       margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
 
       @media (min-width: 1024px) {
         width: 100%;
@@ -28,11 +30,20 @@
 
       .value {
         font-weight: 500;
-        padding-right: 1rem;
         font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        flex: 1;
 
         @media (min-width: 1024px) {
           font-size: 1rem;
+        }
+
+        button {
+          height: 1.5rem;
+          margin-left: 1rem;
+          width: auto;
+          padding: 0 1rem;
         }
       }
     }
