@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import "./Table.css";
+import './Table.css';
 
 export const Table = ({ columns, data }) => {
   const getHeaders = () => {
@@ -26,8 +26,8 @@ export const Table = ({ columns, data }) => {
                 </Link>
               ) : (
                 <p>
-                  {row[fieldItemValue.id].value}{" "}
-                  <span className="unit">{row[fieldItemValue.id].unit}</span>
+                  {row[fieldItemValue.id].value}{' '}
+                  <span className='unit'>{row[fieldItemValue.id].unit}</span>
                 </p>
               )
             ) : (
@@ -40,8 +40,8 @@ export const Table = ({ columns, data }) => {
   };
 
   return (
-    <div className="Table">
-      <table width="100%">
+    <div className='Table'>
+      <table width='100%'>
         <thead>{getHeaders()}</thead>
 
         <tbody>

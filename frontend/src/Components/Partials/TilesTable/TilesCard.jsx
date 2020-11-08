@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import warning from "../../../images/warning.svg";
-import "./TilesCard.css";
+import warning from '../../../images/warning.svg';
+import './TilesCard.css';
 
 export const TilesCard = ({ cardData, handleCardSelect, handleCardRemove }) => {
   const [cardSelected, setCardSelected] = useState(false);
@@ -18,13 +18,13 @@ export const TilesCard = ({ cardData, handleCardSelect, handleCardRemove }) => {
 
   return (
     <label
-      className={"TilesCard" + (cardData.info_missing ? " disabled" : "") + (cardSelected ? ' selected' : '')}
+      className={'TilesCard' + (cardData.info_missing ? ' disabled' : '') + (cardSelected ? ' selected' : '')}
       cardid={cardData.id}
     >
-      <div className="TilesCard_top">
+      <div className='TilesCard_top'>
         <h4>{cardData.name && cardData.name}</h4>
         <input
-          type="checkbox"
+          type='checkbox'
           name={cardData.id}
           checked={cardSelected}
           onChange={() =>
@@ -34,17 +34,17 @@ export const TilesCard = ({ cardData, handleCardSelect, handleCardRemove }) => {
       </div>
 
       {cardData.info_missing && (
-        <div className="TilesCard_bottom">
-          <img src={warning} alt="warning icon" />
+        <div className='TilesCard_bottom'>
+          <img src={warning} alt='warning icon' />
           Missing details
         </div>
       )}
 
       {(cardData.type || cardData.description) && (
-        <div className="TilesCard_bottom">
-          <span className="type">{cardData.type}</span>
+        <div className='TilesCard_bottom'>
+          <span className='type'>{cardData.type}</span>
           {cardData.type && cardData.description && <span>•</span>}
-          <span className="description">{cardData.description}</span>
+          <span className='description'>{cardData.description}</span>
         </div>
       )}
     </label>

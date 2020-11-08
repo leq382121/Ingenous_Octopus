@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import { DASHBOARD_MENU } from "../../../const";
-import { NavLink } from "../../Partials/NavLink";
+import { DASHBOARD_MENU } from '../../../const';
+import { NavLink } from '../../Partials/NavLink';
 
-import "./SideMenu.css";
+import './SideMenu.css';
 
 export const SideMenu = ({sideMenuActive, setSideMenuActive}) => {
   const listSideMenuFields = () => {
     return DASHBOARD_MENU.map((fieldItem, i) => {
       return (
-        <div className="SideMenu_menu_block" key={i}>
+        <div className='SideMenu_menu_block' key={i}>
           {
-            fieldItem.category && <p className="SideMenu_menu_title">{fieldItem.category}</p>
+            fieldItem.category && <p className='SideMenu_menu_title'>{fieldItem.category}</p>
           }
 
-          <ul className="SideMenu_menu_list" key={i}>
+          <ul className='SideMenu_menu_list' key={i}>
             {fieldItem.items.map((item, i) => {
 
               return (
@@ -35,7 +35,7 @@ export const SideMenu = ({sideMenuActive, setSideMenuActive}) => {
 
   return (
     <div className={'Dashboard_side-menu' + (sideMenuActive ? ' active' : '')} onClick={() => setSideMenuActive(false)}>
-      <div className="SideMenu" onClick={(e) =>  e.stopPropagation()}>
+      <div className='SideMenu' onClick={(e) =>  e.stopPropagation()}>
         {listSideMenuFields()}
       </div>
     </div>

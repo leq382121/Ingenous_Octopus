@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import "./Input.css";
+import './Input.css';
 
 export const Input = ({
   labelText,
@@ -10,21 +10,21 @@ export const Input = ({
   selectValues,
   inputValueHandler
 }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     inputValueHandler && inputValueHandler(inputValue);
   }, [inputValue])
 
   return (
-    <div className={("Input" + (disabled ? " disabled" : "") + (error ? " inputError" : "") )}>
+    <div className={('Input' + (disabled ? ' disabled' : '') + (error ? ' inputError' : '') )}>
       <label htmlFor={labelText}>{labelText}</label>
 
-      {inputType === "select" ? (
+      {inputType === 'select' ? (
         <select
           name={labelText}
           disabled={disabled && disabled}
-          className={error && "error"}
+          className={error && 'error'}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         >
@@ -38,10 +38,10 @@ export const Input = ({
         </select>
       ) : (
         <input
-          type={inputType ? inputType : "text"}
+          type={inputType ? inputType : 'text'}
           name={labelText}
           disabled={disabled && disabled}
-          className={error && "error"}
+          className={error && 'error'}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         ></input>

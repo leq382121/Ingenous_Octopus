@@ -120,6 +120,10 @@ form {
 }
 
 /* Additional Globals */
+.scroll-disabled {
+  overflow: hidden;
+}
+
 .error {
   color: var(--color-red-1);
 }

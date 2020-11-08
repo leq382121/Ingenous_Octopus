@@ -11,7 +11,8 @@
     margin-bottom: 0.1875rem;
   }
 
-  input {
+  input,
+  select {
     border-radius: 3px;
     border: 1px solid var(--color-grey-4);
     display: flex;
@@ -33,6 +34,18 @@
     &:disabled {
       background-color: var(--color-grey-7);
     }
+  }
+
+  select {
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url('../../images/arrowSelect.svg');
+    
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
   }
 
   &.disabled {

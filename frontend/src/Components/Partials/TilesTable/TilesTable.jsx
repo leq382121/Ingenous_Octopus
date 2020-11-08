@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { TilesColumn } from "./TilesColumn";
+import { TilesColumn } from './TilesColumn';
 
-import "./TilesTable.css";
+import './TilesTable.css';
 
 export const TilesTable = ({
   children,
@@ -11,11 +11,11 @@ export const TilesTable = ({
   handleModalOn,
 }) => {
   return (
-    <div className="TilesTable">
+    <div className='TilesTable'>
       {children && children}
 
       {data && data.length ? (
-        <div className="TilesTable_wrapper">
+        <div className='TilesTable_wrapper'>
           {data.map((column, i) => {
             return (
               <TilesColumn

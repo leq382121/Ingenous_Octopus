@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { Button } from "../Button";
+import { Button } from '../Button';
 
-import "./ItemCard.css";
+import './ItemCard.css';
 
 export const ItemCard = ({
   category,
@@ -15,26 +15,26 @@ export const ItemCard = ({
 }) => {
   const cardType = () => {
     switch (type) {
-      case "side": {
+      case 'side': {
         return (
           <>
-            <div className="ItemCard_left">
+            <div className='ItemCard_left'>
               <h3>{subtitle && subtitle}</h3>
               <h1>{title && title}</h1>
 
-              <div className="ItemCard_list-labels">{children && children}</div>
+              <div className='ItemCard_list-labels'>{children && children}</div>
             </div>
-            <div className="ItemCard_right">
+            <div className='ItemCard_right'>
               {/* TODO: Hardcoded buttons */}
               <Button
-                buttonText={"Cancel"}
-                onClickHandler={() => console.log("Pew.. pew..")}
+                buttonText={'Cancel'}
+                onClickHandler={() => console.log('Pew.. pew..')}
               />
 
               <Button
-                buttonText={"Start calculating"}
+                buttonText={'Start calculating'}
                 primary={true}
-                onClickHandler={() => console.log("Pew.. pew..")}
+                onClickHandler={() => console.log('Pew.. pew..')}
               />
             </div>
           </>
@@ -44,7 +44,7 @@ export const ItemCard = ({
       default:
         return (
           <>
-            <div className="ItemCard_top">
+            <div className='ItemCard_top'>
               <h2>{title && title}</h2>
 
               {onClickHandler && (
@@ -55,17 +55,17 @@ export const ItemCard = ({
               )}
             </div>
 
-            <div className="ItemCard_content">{children && children}</div>
+            <div className='ItemCard_content'>{children && children}</div>
           </>
         );
     }
   };
 
   return (
-    <div className={"ItemCard " + (type ? type : "")}>
+    <div className={'ItemCard ' + (type ? type : '')}>
       {category && <h5>{category}</h5>}
 
-      <div className="ItemCard_block">{cardType()}</div>
+      <div className='ItemCard_block'>{cardType()}</div>
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import plus from "../../../images/plus.svg";
-import { TilesCard } from "./TilesCard";
-import "./TilesColumn.css";
+import plus from '../../../images/plus.svg';
+import { TilesCard } from './TilesCard';
+import './TilesColumn.css';
 
 export const TilesColumn = ({ columnData, handleSelectedTiles, handleModalOn }) => {
   const [selectedColValues, setSelectedColValues] = useState([]);
@@ -24,12 +24,12 @@ export const TilesColumn = ({ columnData, handleSelectedTiles, handleModalOn }) 
   };
 
   return (
-    <div className="TilesColumn_column">
-      <div className="top">
+    <div className='TilesColumn_column'>
+      <div className='top'>
         <h2>{columnData.title && columnData.title}</h2>
 
         {selectedColValues.length > 0 && (
-          <p className="cards-selected">
+          <p className='cards-selected'>
             <span>{selectedColValues.length}</span> selected
           </p>
         )}
@@ -37,16 +37,16 @@ export const TilesColumn = ({ columnData, handleSelectedTiles, handleModalOn }) 
 
       {/* Add new card */}
       <div
-        className="TilesColumn_new-card"
-        onClick={() => handleModalOn(columnData.type)}
+        className='TilesColumn_new-card'
+        onClick={() => handleModalOn(columnData.type.slice(0, -1))}
       >
-        <img src={plus} alt="plus" />
+        <img src={plus} alt='plus' />
         Add new {columnData.type.slice(0, -1)}
       </div>
 
       {/* Cards List here */}
       {columnData.content && columnData.content.length ? (
-        <div className="TilesColumn_wrapper">
+        <div className='TilesColumn_wrapper'>
           {columnData.content.map((card, i) => {
             return (
               <TilesCard

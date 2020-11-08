@@ -1,24 +1,24 @@
 import React from 'react';
 
-import infoMessage from "../../images/infoMessage.svg";
+import infoMessage from '../../images/infoMessage.svg';
 
-import "./InfoMessage.css";
+import './InfoMessage.css';
 
 export const InfoMessage = ({type, message}) => {
 
   const infoIcon = () => {
     switch (type) {
-      case "error": {
+      case 'error': {
         return <img></img>;
       }
-      case "waring": {
+      case 'waring': {
         return <img></img>;
       }
-      case "info": {
-        return <img className="info" src={infoMessage} alt="info"/>;
+      case 'info': {
+        return <img className='info' src={infoMessage} alt='info'/>;
       }
       default:
-        return <img className="info" src={infoMessage} alt="info"/>;
+        return <img className='info' src={infoMessage} alt='info'/>;
     }
   }
 

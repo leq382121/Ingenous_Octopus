@@ -1,32 +1,32 @@
-import React, { useState } from "react";
-import Cookies from "js-cookie";
+import React, { useState } from 'react';
+import Cookies from 'js-cookie';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import "normalize.css";
+import 'normalize.css';
 
-import { Login } from "./Components/Login/Login";
-import { Dashboard } from "./Components/Dashboard/Dashboard";
+import { Login } from './Components/Login/Login';
+import { Dashboard } from './Components/Dashboard/Dashboard';
 
 export const App = () => {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
 
   const initiateLogIn = () => {
-    Cookies.set("logged_in", true);
+    Cookies.set('logged_in', true);
     !userLoggedIn && setUserLoggedIn(true);
   };
 
   const initiateLogOut = () => {
-    Cookies.remove("logged_in");
+    Cookies.remove('logged_in');
     userLoggedIn && setUserLoggedIn(false);
   };
 
   const checkCookieForInfo = () => {
-    Cookies.get("logged_in") && !userLoggedIn && setUserLoggedIn(true);
+    Cookies.get('logged_in') && !userLoggedIn && setUserLoggedIn(true);
   };
 
   return (
@@ -36,13 +36,13 @@ export const App = () => {
       <Router>
         <Switch key={2}>
           <Route
-            name="Dashboard"
-            path="/dashboard"
+            name='Dashboard'
+            path='/dashboard'
             exact
             render={(props) => {
               return (
                 <Redirect
-                  to="/dashboard/main"
+                  to='/dashboard/main'
                   {...props}
                 />
               );
@@ -50,14 +50,14 @@ export const App = () => {
           />
 
           <Route
-            name="login"
-            path="/login"
+            name='login'
+            path='/login'
             exact
             render={(props) => {
               return (
                 (userLoggedIn && (
                   <Redirect
-                    to="/dashboard/main"
+                    to='/dashboard/main'
                     {...props}
                   />
                 )) || <Login {...props} initiateLogIn={initiateLogIn} />
@@ -66,7 +66,7 @@ export const App = () => {
           />
 
           <Route
-            path="*"
+            path='*'
             exact={true}
             render={(props) => {
               return (
@@ -75,7 +75,7 @@ export const App = () => {
                     {...props}
                     initiateLogOut={initiateLogOut}
                   />
-                )) || <Redirect to="/login" />
+                )) || <Redirect to='/login' />
               );
             }}
           />

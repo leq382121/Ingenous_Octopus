@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import { ItemCard } from "../../Partials/ItemCard/ItemCard";
-import { ItemCardContent } from "../../Partials/ItemCard/ItemCardContent";
+import { ItemCard } from '../../Partials/ItemCard/ItemCard';
+import { ItemCardContent } from '../../Partials/ItemCard/ItemCardContent';
 
 import {
   CONTENT_PROJECT_PARAMETERS,
   CONTENT_SIMULATION,
   CONTENT_CALCULATIONS,
-} from "../../../const";
+} from '../../../const';
 
-import "./Main.css";
+import './Main.css';
 
 export const Main = ({ title }) => {
   const MAIN_VALUES = [
@@ -19,7 +19,7 @@ export const Main = ({ title }) => {
   ];
 
   return (
-    <div className="Main widget max-width-wrapper">
+    <div className='Main widget max-width-wrapper'>
       <h1>{title}</h1>
 
       {MAIN_VALUES.map((CARD_ITEM, i) => {
