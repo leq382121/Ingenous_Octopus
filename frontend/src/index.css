@@ -46,6 +46,7 @@ body {
   font-family: Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
 }
 
 h1 {
@@ -114,9 +115,27 @@ p {
   margin: 0;
 }
 
-
 form {
   width: 100%;
+}
+
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  border: 1px solid var(--color-grey-4);
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:checked {
+    background-color: var(--color-green-4);
+    background-image: url('./images/checkmark.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+  }
 }
 
 /* Additional Globals */

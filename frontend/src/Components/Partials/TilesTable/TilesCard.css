@@ -49,21 +49,6 @@
   }
 
   input {
-    width: 1rem;
-    height: 1rem;
     border-radius: 50%;
-    vertical-align: middle;
-    border: 1px solid var(--color-grey-4);
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-
-    &:checked {
-      background-color: var(--color-green-4);
-      background-image: url('../../../images/checkmark.svg');
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center;
-    }
   }
 }

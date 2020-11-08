@@ -12,7 +12,11 @@ import { Input } from "../../Partials/Input";
 import info from "../../../images/info.svg";
 import arrowAccordeon from "../../../images/arrowAccordeon.svg";
 
-import { CONTENT_CALCULATE_CARD, TILES_PAYLOAD } from "../../../const";
+import {
+  CONTENT_CALCULATE_CARD,
+  TILES_PAYLOAD,
+  PLANTS_MODAL_SELECT_PAYLOAD,
+} from "../../../const";
 
 import "./PlantsElectrical.css";
 import "./ModalForm.css";
@@ -26,6 +30,9 @@ export const PlantsElectrical = ({ title }) => {
     modules: [],
     inverters: [],
   });
+
+  const [moduleType, setModuleType] = useState("");
+  const [disableMonoface, setDisableMonofaces] = useState(false);
 
   const handleModalOn = (value) => (setShowModal(true), setModalType(value));
   const handleModalClose = () => (setShowModal(false), setModalType(""));
@@ -48,6 +55,14 @@ export const PlantsElectrical = ({ title }) => {
       ? document.querySelector("body").classList.add("scroll-disabled")
       : document.querySelector("body").classList.remove("scroll-disabled");
   }, [showModal]);
+
+  useEffect(() => {
+    moduleType === "monofacial" && !disableMonoface
+      ? setDisableMonofaces(true)
+      : setDisableMonofaces(false);
+
+    console.log(disableMonoface);
+  }, [moduleType]);
 
   const handleSelectedTiles = (type, value) => {
     setSelectedTilesItems({
@@ -84,7 +99,8 @@ export const PlantsElectrical = ({ title }) => {
 
       {showModal && (
         <Modal handleModalClose={handleModalClose}>
-          {/* TODO: Potentialy a Component */}
+          {/* TODO: Should become a component in future */}
+
           <div className="PlantsElectrical_modal">
             <div className="PlantsElectrical_modal_left">
               <h1>Add new {modalType}</h1>
@@ -106,7 +122,7 @@ export const PlantsElectrical = ({ title }) => {
               </div>
 
               <div className="modal_form-container">
-                <h2>Quick add</h2>
+                <h2>Parameters</h2>
 
                 <div className="modal_form-row flex-center">
                   <div className="full">
@@ -115,15 +131,51 @@ export const PlantsElectrical = ({ title }) => {
                 </div>
 
                 <div className="modal_form-row flex-center">
-                  <Input labelText="Module type" inputType="select" />
-
-                  <Input labelText="Module layers" inputType="select" />
+                  <Input
+                    labelText="Module type"
+                    inputType="select"
+                    selectValues={PLANTS_MODAL_SELECT_PAYLOAD.moduleType}
+                    inputValueHandler={(value) => setModuleType(value)}
+                  />
+                  <Input
+                    labelText="Module layers"
+                    inputType="select"
+                    selectValues={PLANTS_MODAL_SELECT_PAYLOAD.moduleLayers}
+                  />
                 </div>
 
                 <div className="modal_form-row flex-center">
-                  <Input labelText="Module type" inputType="text" />
+                  <Input labelText="Width" inputType="text" />
 
-                  <Input labelText="Module layers" inputType="text" />
+                  <Input labelText="Height" inputType="text" />
+                </div>
+
+                <div className="modal_form-row flex-center">
+                  <Input labelText="Thickness" inputType="text" />
+
+                  <Input labelText="Glass thickness" inputType="text" />
+                </div>
+
+                <div className="modal_form-row flex-center">
+                  <Input
+                    labelText="No. of cells along width"
+                    inputType="text"
+                  />
+
+                  <Input
+                    labelText="No. of cells along height"
+                    inputType="text"
+                  />
+                </div>
+
+                <div className="modal_form-row flex-center">
+                  <Input
+                    labelText="Bifaciality"
+                    inputType="text"
+                    disabled={disableMonoface}
+                  />
+
+                  <Input labelText="Number of bypass diodes" inputType="text" />
                 </div>
               </div>
             </div>
@@ -131,29 +183,40 @@ export const PlantsElectrical = ({ title }) => {
             <div className="PlantsElectrical_modal_right">
               <div className="PlantsElectrical_modal_right_top">
                 <img className="info-icon" src={info} alt="info" />
-                <h3>Module type</h3>
-                <span className="simple-desc">
+
+                <p className='info-title'>Module type</p>
+
+                <p className="simple-desc">
                   Some description about this mysterious module type
-                </span>
+                </p>
+
                 <ul className="accordeon">
                   <li className="accordeon-items">
                     <img
                       className="arrowAccordeon-icon"
-                      scr={arrowAccordeon}
+                      src={arrowAccordeon}
                       alt="arrowAccordeon icon"
                     />
-                    <p>Show more details</p>
+                    <p className="arrowAccordeon-title">Show more details</p>
                   </li>
                 </ul>
               </div>
 
               <div className="PlantsElectrical_modal_right_bottom">
-                <Button
-                  buttonText="Cancel"
-                  onClickHandler={() => handleModalClose()}
-                />
 
-                <Button buttonText="Add module" primary />
+                <div className="bottom_checkbox_wrapper">
+                  <input type="checkbox" id="preset" name='preset checkbox' />
+                  <label for="preset">Save as preset</label>
+                </div>
+
+                <div className="bottom_button_wrapper">
+                  <Button
+                    buttonText="Cancel"
+                    onClickHandler={() => handleModalClose()}
+                  />
+
+                  <Button buttonText="Add module" primary />
+                </div>
               </div>
             </div>
           </div>

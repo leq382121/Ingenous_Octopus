@@ -240,6 +240,38 @@ const TILES_PAYLOAD = [
   },
 ]
 
+const PLANTS_MODAL_SELECT_PAYLOAD =
+{
+  moduleType: [
+    {
+      name: 'Monofacial',
+      value: 'monofacial'
+    },
+    {
+      name: 'Bifacial',
+      value: 'bifacial'
+    },
+  ],
+  moduleLayers: [
+    {
+      name: 'Glass/Glass',
+      value: 'glass',
+    },
+    {
+      name: 'Glass/Backsheet',
+      value: 'backsheet',
+    },
+  ],
+}
+
+/**
+ * 
+ * Module type selections:
+
+
+If module type selection is “Monofacial”, bifaciality input gets disabled
+ */
+
 export {
   DASHBOARD_MENU,
   CONTENT_PROJECT_PARAMETERS,
@@ -247,4 +279,5 @@ export {
   CONTENT_CALCULATIONS,
   CONTENT_CALCULATE_CARD,
   TILES_PAYLOAD,
+  PLANTS_MODAL_SELECT_PAYLOAD,
 };
