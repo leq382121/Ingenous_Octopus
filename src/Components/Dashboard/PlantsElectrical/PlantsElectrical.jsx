@@ -40,6 +40,13 @@ export const PlantsElectrical = ({ title }) => {
   // eslint-disable-next-line
   const handleModalClose = () => (setShowModal(false), setModalType(""))
 
+  const handleSelectedTiles = (type, value) => {
+    setSelectedTilesItems({
+      ...selectedTilesItems,
+      [type]: value,
+    });
+  };
+
   // TODO: Create generator that creates entries accordingly to Columns
   useEffect(() => {
     selectedTilesItems.plants.length &&
@@ -61,13 +68,6 @@ export const PlantsElectrical = ({ title }) => {
       : setDisableMonofaces(false);
     // eslint-disable-next-line
   }, [moduleType]);
-
-  const handleSelectedTiles = (type, value) => {
-    setSelectedTilesItems({
-      ...selectedTilesItems,
-      [type]: value,
-    });
-  };
 
   return (
     <div className="PlantsElectrical widget max-width-wrapper">

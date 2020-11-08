@@ -2,14 +2,16 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 100vh;
+  padding: 2.375rem 0;
 
   @media (min-width: 1024px) {
     background-color: var(--color-grey-1);
+    justify-content: center;
   }
 
-  .Login_modal {
+  &_modal {
     background-color: var(--color-white);
     border-radius: 8px;
     width: 100%;
@@ -42,11 +44,24 @@
     }
   }
 
-  .Register_text {
-    color: (--color-black);
+  &_register,
+  &_register a {
+    color: var(--color-black);
+    font-weight: 500;
 
     @media (min-width: 1024px) {
-      color: (--color-white);
+      color: var(--color-white);
+    }
+  }
+
+  &_register a {
+    margin-left: 0.25rem;
+    text-decoration: underline;
+  }
+
+  &_register {
+    @media (min-width: 1024px) {
+      margin-top: 2.5rem;
     }
   }
 }
